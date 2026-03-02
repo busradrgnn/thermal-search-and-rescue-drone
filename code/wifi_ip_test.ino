@@ -1,38 +1,25 @@
-// Stage 1 - WiFi Connection and Static IP Configuration
-
+//Find IP address
 #include <WiFi.h>
 
 // WiFi bilgileri
-const char* ssid = "WIFI_ADIN";
-const char* password = "SIFREN";
-
-// Statik IP ayarları
-IPAddress local_IP(192, 168, 1, 200);   // İstediğin IP
-IPAddress gateway(192, 168, 1, 1);
-IPAddress subnet(255, 255, 255, 0);
+const char* ssid = "DSMART_0AF326";
+const char* password = "AichYqz4";
 
 void setup() {
-  Serial.begin(115200);
-
-  // Statik IP yapılandırma
-  if (!WiFi.config(local_IP, gateway, subnet)) {
-    Serial.println("Static IP configuration failed!");
-  }
-
-  // WiFi bağlantısı başlat
-  WiFi.begin(ssid, password);
-  Serial.print("Connecting to WiFi");
-
+  Serial.begin(115200);  // Seri haberleşme için
+  WiFi.begin(ssid, password);  // WiFi başlat
+  
+  Serial.println("WiFi'ye bağlanıyor...");
+  
   while (WiFi.status() != WL_CONNECTED) {
     delay(1000);
-    Serial.print(".");
+    Serial.println("Bağlantı bekleniyor...");
   }
-
-  Serial.println("\nWiFi connected!");
-  Serial.print("Assigned IP address: ");
-  Serial.println(WiFi.localIP());
+  
+  Serial.println("WiFi'ye bağlandı!");
+  Serial.println(WiFi.localIP());  // IP adresini yazdır
 }
 
 void loop() {
-  // Sürekli bir işlem yok
+  // Döngüde başka işlemler yapılabilir
 }

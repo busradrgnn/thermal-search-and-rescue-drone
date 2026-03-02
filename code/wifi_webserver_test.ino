@@ -1,4 +1,4 @@
-//Stage 1 - Creating HTTP server
+// Creating HTTP server
 #include <WiFi.h>
 #include <WebServer.h>
 

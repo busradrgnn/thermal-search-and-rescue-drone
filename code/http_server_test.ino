@@ -1,4 +1,4 @@
-//Stage 2 - Basic wifi server test
+// Basic wifi server test
 #include <WiFi.h> 
 #include <WebServer.h>
 
